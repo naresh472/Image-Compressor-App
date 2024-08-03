@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/backgroundcolor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".image_difference">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/main_head"
+            android:background="#2196F3"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_below="@+id/main_head"
+            android:id="@+id/result_header"
+            >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/cancel_svgrepo_com"
+                android:id="@+id/cancel_btn"
+                android:layout_centerVertical="true"
+                />
+
+              <RelativeLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentEnd="true"
+                  android:layout_marginRight="10dp"
+                  android:padding="10dp"
+                  android:background="@color/dif_back"
+                  >
+
+                  <TextView
+                      android:id="@+id/originalSize"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Original 56 KB"
+                      android:textColor="@color/textcolor"
+                      android:textStyle="bold"
+                      android:textSize="18sp"/>
+
+              </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <com.jsibbold.zoomage.ZoomageView
+            android:layout_below="@id/result_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:zoomage_restrictBounds="true"
+            app:zoomage_animateOnReset="true"
+            app:zoomage_autoResetMode="UNDER"
+            app:zoomage_autoCenter="true"
+            android:id="@+id/original_image_show"
+
+            app:zoomage_zoomable="true"
+            app:zoomage_translatable="true"
+            app:zoomage_minScale="0.6"
+            app:zoomage_maxScale="8"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#03A9F4"
+
+        android:layout_centerInParent="true"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:id="@+id/header"
+            >
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:background="@color/dif_back"
+                >
+
+                <TextView
+                    android:id="@+id/compressedSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Original 40 KB"
+                    android:textColor="@color/textcolor"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+        <com.jsibbold.zoomage.ZoomageView
+            android:layout_below="@id/header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:zoomage_restrictBounds="true"
+            app:zoomage_animateOnReset="true"
+            app:zoomage_autoResetMode="UNDER"
+            app:zoomage_autoCenter="true"
+            android:id="@+id/compressed_image_show"
+
+            app:zoomage_zoomable="true"
+            app:zoomage_translatable="true"
+            app:zoomage_minScale="0.6"
+            app:zoomage_maxScale="8"
+            />
+
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@color/backgroundcolor"
+    android:layout_height="match_parent"
+    tools:context=".task_layout">
+
+
+    <ProgressBar
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/load1"
+        android:visibility="gone"
+
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/main_head"
+        android:background="#2196F3"/>
+
+    <RelativeLayout
+        android:id="@+id/task_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/main_head">
+
+    <RelativeLayout
+        android:id="@+id/task_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back_square_svgrepo_com"
+           />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/back_button"
+
+            android:gravity="center"
+            android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/count_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 image"
+            android:layout_marginLeft="-20dp"
+            android:textColor="@color/textcolor"
+            android:textSize="22sp"/>
+            <TextView
+                android:id="@+id/image_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(1000 KB)"
+                android:layout_marginLeft="7dp"
+                android:textColor="@color/textcolor"
+                android:textSize="22sp"/>
+
+        </LinearLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/task_header"
+        android:scrollbars="none"
+        android:scrollbarStyle="insideInset"
+        android:layout_above="@+id/main_bottom"
+        android:id="@+id/scroll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scroll_layout">
+
+    <TextView
+        android:id="@+id/extra_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textcolor"
+        android:layout_marginTop="20dp"
+        android:text="Select Compression Mode"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"/>
+
+
+
+    <RelativeLayout
+        android:id="@+id/task_select_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/task_layout"
+        android:paddingLeft="25dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_below="@+id/extra_text">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radiogp"
+
+           >
+
+            <RadioButton
+                android:id="@+id/auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:checked="true"
+                android:text="Auto (Recommended)"
+                android:textAlignment="center"
+                android:textColor="@color/textcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <RadioButton
+                android:id="@+id/custom_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+
+                android:text="Custom File Size"
+                android:textAlignment="center"
+                android:textColor="@color/textcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <RadioButton
+                android:id="@+id/Custom_quality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+
+                android:text="Custom Quality and Resolution"
+                android:textAlignment="center"
+                android:textColor="@color/textcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+
+        </RadioGroup>
+
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/task_custom_file_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+
+        android:background="@drawable/task_layout"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:visibility="gone"
+        android:layout_below="@+id/task_select_mode">
+
+        <TextView
+            android:id="@+id/extra_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="File Size"
+            android:textColor="@color/textcolor"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+        <com.google.android.material.slider.Slider
+            android:id="@+id/normalContinuousSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/extra_text2"
+            android:layout_marginTop="15dp"
+            android:valueFrom="0.0"
+            android:valueTo="100.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/normalContinuousSlider"
+
+            android:text="quality (%) :  "
+            android:layout_marginTop="20dp"
+            android:id="@+id/text_ex1"
+            android:textSize="20sp"
+            android:textColor="@color/textcolor"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/normalContinuousSlider"
+            android:layout_toRightOf ="@+id/text_ex1"
+            android:layout_marginTop="20dp"
+            android:id="@+id/tvResult"
+            android:text="0.0"
+            android:textSize="20sp"
+            android:textColor="@color/textcolor"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_ex1"
+
+            android:text="file size (KB) : "
+            android:layout_marginTop="15dp"
+            android:id="@+id/text_ex2"
+            android:textSize="20sp"
+            android:textColor="@color/textcolor"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvResult"
+            android:layout_toRightOf="@+id/text_ex2"
+            android:layout_marginTop="15dp"
+            android:text="0 KB"
+            android:id="@+id/bytesize"
+            android:textSize="20sp"
+            android:textColor="@color/textcolor"/>
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/task_custom_quality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            android:background="@drawable/task_layout"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+
+            android:layout_below="@+id/task_select_mode">
+
+            <TextView
+                android:id="@+id/extra_text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quality"
+                android:textColor="@color/textcolor"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/quality_radiogp"
+                android:layout_below="@+id/extra_text3"
+
+                >
+
+            <RadioButton
+                android:id="@+id/quality_auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:checked="true"
+                android:text="Auto (Recommended)"
+                android:textAlignment="center"
+                android:textColor="@color/textcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <RadioButton
+                android:id="@+id/quality_custom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+
+                android:text="Custom"
+                android:textAlignment="center"
+                android:textColor="@color/textcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            </RadioGroup>
+
+            <RelativeLayout
+                android:id="@+id/quality_custom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quality_radiogp"
+                android:visibility="gone"
+               >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quality_per"
+                    android:text="0%"
+                    android:textColor="@color/textcolor"
+                    android:textSize="22sp"
+                    android:layout_centerHorizontal="true"/>
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/quality_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/quality_per"
+                    android:layout_marginTop="5dp"
+                    android:valueFrom="0.0"
+                    android:valueTo="100.0"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/task_custom_resoultion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            android:background="@drawable/task_layout"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+
+            android:layout_below="@+id/task_custom_quality">
+
+            <TextView
+                android:id="@+id/extra_text4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resolution"
+                android:textColor="@color/textcolor"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                />
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/resolution_radiogp"
+                android:layout_below="@+id/extra_text4"
+
+                >
+
+                <RadioButton
+                    android:id="@+id/resolution_original"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:checked="true"
+                    android:text="Keep original"
+                    android:textAlignment="center"
+                    android:textColor="@color/textcolor"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+                <RadioButton
+                    android:id="@+id/resolution_custom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+
+                    android:text="Custom"
+                    android:textAlignment="center"
+                    android:textColor="@color/textcolor"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+            </RadioGroup>
+
+            <RelativeLayout
+                android:id="@+id/resolution_custom_width_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/resolution_radiogp"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textbox1"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Width"
+
+                    app:hintTextColor="@color/textcolor"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                    <AutoCompleteTextView
+                        android:id="@+id/image_width"
+                        android:layout_width="130dp"
+                        android:paddingLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="19dp"
+                        android:ems="20"
+                        android:textColorHint="@color/textcolor"
+                        android:textColor="@color/textcolor"
+                        android:layout_marginTop="15dp"
+                        android:paddingTop="15dp"
+                        android:inputType="number"
+                        android:paddingBottom="15dp"
+                        />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/cross"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/textbox1"
+                    android:layout_centerVertical="true"
+
+                    android:textSize="25sp"/>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textbox2"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Height"
+                    android:layout_toRightOf="@+id/cross"
+
+                    app:hintTextColor="@color/textcolor"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                    <AutoCompleteTextView
+                        android:id="@+id/image_height"
+                        android:layout_width="130dp"
+                        android:paddingLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="19dp"
+                        android:ems="20"
+
+                        android:textColorHint="@color/textcolor"
+                        android:textColor="@color/textcolor"
+
+                        android:layout_marginTop="15dp"
+                        android:paddingTop="15dp"
+                        android:inputType="number"
+                        android:paddingBottom="15dp"
+                        />
+
+
+
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+
+  </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="20dp"
+
+        android:paddingRight="20dp"
+        android:id="@+id/main_bottom"
+        android:layout_marginTop="15dp"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/compress_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/newbutton"
+            android:text="Compress"
+            android:textSize="20sp"
+            android:textColor="#fff"/>
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
+
+
+
+</RelativeLayout>

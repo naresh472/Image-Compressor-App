@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundcolor"
+    tools:context=".MainActivity">
+    <ProgressBar
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/load"
+        android:visibility="gone"
+
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/lotti_1"
+        app:lottie_rawRes="@raw/c2"
+        app:lottie_autoPlay="true"
+        android:visibility="gone"
+        app:lottie_loop="true"/>
+
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:id="@+id/main_head"
+    android:background="#2196F3"/>
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_head">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/main_heder"
+       >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/mainlogo"
+            android:id="@+id/main_logo"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/main_logo"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/textcolor"
+            android:id="@+id/main_appname"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            />
+        <TextView
+            android:layout_marginTop="-5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/main_logo"
+            android:layout_below="@+id/main_appname"
+            android:text="@string/app_subName"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+
+            />
+
+
+
+
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:scrollbarStyle="insideInset"
+        android:layout_below="@+id/main_heder"
+        android:layout_above="@+id/main_bottom"
+        android:id="@+id/scroll_view">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_upload_layout"
+
+        android:layout_marginTop="15dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/upload_image"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_layout"
+            android:layout_centerHorizontal="true"
+            android:drawableStart="@drawable/folder_svgrepo_com"
+            android:textAllCaps="false"
+            android:paddingLeft="25dp"
+            android:drawablePadding="-10dp"
+            android:backgroundTint="#2196F3"
+            android:text="Browse images"
+            android:textSize="18sp"
+            android:textColor="#fff"/>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="20dp"
+        android:layout_below="@+id/main_upload_layout">
+
+
+
+
+
+        <com.jsibbold.zoomage.ZoomageView
+
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+
+            app:zoomage_restrictBounds="true"
+            app:zoomage_animateOnReset="true"
+            app:zoomage_autoResetMode="UNDER"
+            app:zoomage_autoCenter="true"
+            android:id="@+id/image_show"
+            android:layout_marginTop="20dp"
+            app:zoomage_zoomable="true"
+            app:zoomage_translatable="true"
+            app:zoomage_minScale="0.6"
+            app:zoomage_maxScale="8"
+            />
+        <Gallery
+            android:id="@+id/image_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animationDuration="3000"
+            android:spacing="10dp"
+            android:scrollbars="none"
+            android:scrollbarStyle="insideInset"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/image_show"
+            android:unselectedAlpha="50"/>
+
+
+
+    </RelativeLayout>
+    </RelativeLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:id="@+id/main_bottom"
+        android:layout_marginTop="15dp"
+        >
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/proceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:textAllCaps="false"
+
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/button_layout"
+        android:text="Proceed"
+        android:textSize="20sp"
+        android:textColor="#fff"/>
+
+
+    </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

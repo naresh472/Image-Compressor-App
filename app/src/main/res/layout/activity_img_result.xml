@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@color/backgroundcolor"
+    android:layout_height="match_parent"
+    android:paddingBottom="30dp"
+    tools:context=".img_result">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/main_head"
+        android:background="#2196F3"/>
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:paddingLeft="10dp"
+         android:paddingRight="10dp"
+         android:layout_below="@+id/main_head"
+         android:id="@+id/result_header"
+         >
+
+         <ImageView
+             android:layout_width="25dp"
+             android:layout_height="25dp"
+             android:src="@drawable/cancel_svgrepo_com"
+             android:id="@+id/cancel_btn"
+             />
+         <ImageView
+             android:layout_width="25dp"
+             android:layout_height="25dp"
+             android:src="@drawable/menu_vertical_svgrepo_com"
+             android:id="@+id/menu_btn"
+             android:layout_alignParentEnd="true"
+             />
+
+
+
+
+     </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/result_header"
+            android:id="@+id/scroll_layout">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:id="@+id/status"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/success_svgrepo_com"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/success_img"/>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/status_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/status"
+                android:layout_marginTop="15dp"
+
+                >
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Original size"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/textcolor"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/result_original_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2.1 MB"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/textcolor"
+                    android:textSize="23sp"/>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/status_info2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/status_info"
+                android:layout_marginTop="3dp"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Compressed size"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/textcolor"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/result_custom_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="304 KB"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#13D61B"
+                    android:textSize="29sp"/>
+
+
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/recycle_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/status_info2"
+                android:layout_above="@+id/shareAll"
+                android:layout_marginTop="15dp"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/status_recycle"
+
+
+                    />
+
+
+
+            </RelativeLayout>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/shareAll"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="20dp"
+                android:textAllCaps="false"
+                   android:paddingLeft="15dp"
+                android:drawableStart="@drawable/share"
+                android:layout_marginTop="20dp"
+
+                android:layout_alignParentEnd="true"
+
+                android:background="@drawable/sharebutton"
+                android:drawablePadding="-10dp"
+                android:text="Share All"
+
+                android:textSize="20sp"
+                android:textColor="#fff"/>
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
